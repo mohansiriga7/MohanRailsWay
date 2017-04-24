@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  batting_order: 1
+  type: 
+  team_id: 
+
+two:
+  name: MyString
+  batting_order: 1
+  type: 
+  team_id: 

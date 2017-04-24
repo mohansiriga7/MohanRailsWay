@@ -1,11 +1,11 @@
-class Examle < ApplicationRecord
+class Examle < ActiveRecord::Base
 
   def before_inverse_of_option
-    a = Author.first
-    b = a.books.first
-    a.first_name == b.author.first_name # => true
-    a.first_name = 'Manny'
-    a.first_name == b.author.first_name # => false
+    a = Team.first
+    b = a.players.first
+    a.name == b.team.name # => true
+    a.name = 'Manny'
+    a.name == b.author.first_name # => false
 
 =begin
     This happens because a and b.author are two different in-memory representations of the same data,
@@ -15,11 +15,11 @@ class Examle < ApplicationRecord
   end
 
   def after_inverse_of_option
-    a = Author.first
-    b = a.books.first
-    a.first_name == b.author.first_name # => true
-    a.first_name = 'Manny'
-    a.first_name == b.author.first_name # => true
+    a = Team.first
+    b = a.players.first
+    a.name == b.team.name # => true
+    a.name = 'Manny'
+    a.name == b.author.first_name # => true
 
 =begin
     With inverse_of changes,
