@@ -1,5 +1,4 @@
-module AliasMethod
-  class Vehicle < ActiveRecord::Base
+class Vehicle < ActiveRecord::Base
 
     def engine_name
       puts "vehicle engine"
@@ -11,4 +10,3 @@ module AliasMethod
     end
 
   end
-end
