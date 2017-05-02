@@ -1,14 +1,14 @@
 # MohanRailsWay
 
-a1 = Author.first  
-=> #<Author id: 1, name: "mohan siriga", lock_version: 1, created_at: "2017-05-01 15:59:41", updated_at: "2017-05-01 16:00:56"    
-a2 = Author.first  
-=> #<Author id: 1, name: "mohan siriga", lock_version: 1, created_at: "2017-05-01 15:59:41", updated_at: "2017-05-01 16:00:56">  
-a1.name = "mohan s"  
-=> "mohan s"  
-a1.save  
-=> true  
-a2.name = "should fail"  
-=> "should fail"  
-a2.save  
-ActiveRecord::StaleObjectError: Attempted to update a stale object: Author  
+author = Author.new  
+ => #<Author id: nil, name: nil, lock_version: 0, created_at: nil, updated_at: nil>  
+author.validate!  
+ => ["cannot be nil"]  
+author.errors.full_messages  
+ => ["Name cannot be nil"]  
+mohan = Author.new(name: "mohan siriga")  
+ => #<Author id: nil, name: "mohan siriga", lock_version: 0, created_at: nil, updated_at: nil>  
+mohan.validate!  
+ => nil  
+mohan.errors.full_messages  
+ => []  
